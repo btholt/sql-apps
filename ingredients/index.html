@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ingredients</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="/ingredients/style.css" />
+  </head>
+  <body>
+    <section class="ingredient-section">
+      <h2 class="section-title">Fruits</h2>
+      <div class="swiper">
+        <div id="swiper-fruit" class="swiper-wrapper">
+          <!-- Slides go here-->
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+    </section>
+    <section class="ingredient-section">
+      <h2 class="section-title">Vegetables</h2>
+      <div class="swiper">
+        <div id="swiper-vegetable" class="swiper-wrapper">
+          <!-- Slides go here-->
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+    </section>
+    <section class="ingredient-section">
+      <h2 class="section-title">Meats</h2>
+      <div class="swiper">
+        <div id="swiper-meat" class="swiper-wrapper">
+          <!-- Slides go here-->
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+    </section>
+    <section class="ingredient-section">
+      <h2 class="section-title">Others</h2>
+      <div class="swiper">
+        <div id="swiper-other" class="swiper-wrapper">
+          <!-- Slides go here-->
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+    </section>
+    <section class="ingredient-section">
+      <h2 class="section-title">All Ingredients</h2>
+      <form class="search-form" id="search">
+        <input id="search-term" class="ingredient-search" name="term" />
+        <button class="btn-action" type="submit">
+          <img
+            class="btn-search-icon"
+            src="/images/site/search-button.svg"
+            alt="submit search"
+          />
+        </button>
+      </form>
+      <h2 class="section-title">Search Results</h2>
+      <form id="ingredient-deletion">
+        <ol class="results" id="search-results"></ol>
+      </form>
+      <form id="pagination">
+        <div class="page-buttons">
+          <button
+            disabled="disabled"
+            data-action="prev"
+            class="btn-action btn-previous"
+            id="prev-button"
+          >
+            ←
+          </button>
+          <button
+            data-action="next"
+            class="btn-action btn-next"
+            id="next-button"
+          >
+            →
+          </button>
+        </div>
+      </form>
+    </section>
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src="/ingredients/client.js"></script>
+  </body>
+</html>

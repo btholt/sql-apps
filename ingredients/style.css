@@ -1,0 +1,186 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: #eee;
+}
+
+.swiper-slide {
+  width: 25%;
+  height: 350px;
+  background-position: center;
+  background-size: cover;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.ingredient-title {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, .7);
+  padding: 20px 30px;
+  font-size: 20px;
+}
+
+.label-image {
+  border: 2px solid white;
+  border-radius: 5px;
+  height: 50px;
+  width: 50px;
+  line-height: 50px;
+  color: white;
+  font-size: 25px;
+  background-color: rgba(0, 0, 0, .08);
+  text-align: center;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+.result-labels {
+  display: flex;
+
+}
+
+.label-result {
+  border: 1px solid black;
+  border-radius: 5px;
+  height: 32px;
+  width: 32px;
+  line-height: 32px;
+  font-size: 16px;
+  background-color: rgba(0, 0, 0, 0);
+  text-align: center;
+  margin-left: 5px;
+}
+
+.label-remove {
+  cursor: pointer;
+}
+
+.label-remove::before {
+  content: "❌";
+}
+
+.label-mini-image {
+  background-size: cover;
+  background-position: center;
+}
+
+.label-fruit::before {
+  content: "Fr";
+}
+
+.label-vegetable::before {
+  content: "Vg";
+}
+
+.label-meat::before {
+  content: "Me";
+}
+
+.label-other::before {
+  content: "O";
+}
+
+.ingredient-section {
+  margin: 0 auto;
+  max-width: 1000px;
+  padding: 15px;
+}
+
+.section-title {
+  color: #555;
+  text-transform: uppercase;
+  text-indent: 30px;
+  margin-bottom: 5px;
+  font-size: 16px;
+}
+
+.results {
+  list-style: none;
+  padding: 0;
+}
+
+.ingredient-result {
+  margin: 0 0 15px 0;
+  padding: 25px;
+  width: 100%;
+  position: relative;
+  background-color: white;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ingredient-search {
+  width: 100%;
+  padding: 5px 20px;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+}
+
+.search-form {
+  display: flex;
+  justify-content: stretch;
+  align-items: stretch;
+}
+
+.btn-action {
+  background-color: #ff8552;
+  border: none;
+  border-radius: 5px;
+  margin-left: 10px;
+  padding: 8px;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.btn-action:disabled {
+  background-color: #f8cbb7;
+  cursor: not-allowed;
+}
+
+.page-buttons {
+  width: 100%;
+  text-align: center;
+}
+
+#hero {
+  width: 100%;
+  margin: 0 auto;
+  height: 0;
+  padding-bottom: 50%;
+  background-position: center;
+  background-size: cover;
+}
+
+.main {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.recipe-text {
+  margin-left: 30px;
+}
+
+.recipe-subtitle {
+
+}
+
+.detail-result {
+  
+}
+
+.recipe-ingredients-list {
+  padding: 0;
+}

@@ -1,0 +1,21 @@
+{
+  "name": "sql-apps",
+  "version": "1.0.0",
+  "description": "Example Apps for SQL",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "author": "Brian Holt <btholt+sql@gmail.com>",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "express": "^4.18.1",
+    "image-downloader": "^4.3.0",
+    "pg": "^8.7.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19",
+    "prettier": "^2.7.1"
+  }
+}

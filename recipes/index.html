@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recipes</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="/ingredients/style.css" />
+  </head>
+  <body>
+    <section class="ingredient-section">
+      <h2 class="section-title">All Recipes</h2>
+      <form id="ingredient-deletion">
+        <ol class="results" id="search-results"></ol>
+      </form>
+      <form id="pagination">
+        <div class="page-buttons">
+          <button
+            disabled="disabled"
+            data-action="prev"
+            class="btn-action btn-previous"
+            id="prev-button"
+          >
+            ←
+          </button>
+          <button
+            data-action="next"
+            class="btn-action btn-next"
+            id="next-button"
+          >
+            →
+          </button>
+        </div>
+      </form>
+    <script src="/recipes/client.js"></script>
+  </body>
+</html>

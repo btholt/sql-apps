@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recipe</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="/ingredients/style.css" />
+  </head>
+  <body>
+    <div class="main">
+      <h1 class="recipe-title" id="title">{title}</h1>
+      <section class="recipe-section">
+        <div class="recipe-hero" id="hero" />
+      </section>
+      <section class="recipe-section recipe-text">
+        <h2 class="recipe-subtitle">Ingredients</h2>
+        <ol id="list" class="recipe-ingredients-list">
+          {ingredients}
+        </ol>
+        <h2 class="recipe-subtitle">Instructions</h2>
+        <p id="body" class="recipe-body">{body}</p>
+      </section>
+      <section class="recipe-section">
+        <div class="swiper">
+          <div id="swiper-ingredients" class="swiper-wrapper">
+            <!-- Slides go here-->
+          </div>
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+      </section>
+    </div>
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src="/recipes/detail-client.js"></script>
+  </body>
+</html>
