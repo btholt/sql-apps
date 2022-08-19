@@ -1,9 +1,15 @@
 const express = require("express");
+const path = require("path");
 
 const recipes = require("./recipes/api");
 const ingredients = require("./ingredients/api");
 
 const app = express();
+
+app.get("/", (_, res) => res.sendFile(path.join(__dirname, "./index.html")));
+app.get("/style.css", (_, res) =>
+  res.sendFile(path.join(__dirname, "./style.css"))
+);
 
 app.use(express.json());
 app.use("/images", express.static("./images"));

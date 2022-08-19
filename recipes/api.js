@@ -11,7 +11,7 @@ router.get("/detail-client.js", (_, res) =>
   res.sendFile(path.join(__dirname, "./detail-client.js"))
 );
 router.get("/style.css", (_, res) =>
-  res.sendFile(path.join(__dirname, "../ingredients/style.css"))
+  res.sendFile(path.join(__dirname, "../style.css"))
 );
 router.get("/detail", (_, res) =>
   res.sendFile(path.join(__dirname, "./detail.html"))

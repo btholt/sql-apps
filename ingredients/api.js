@@ -7,9 +7,6 @@ router.get("/", (_, res) => res.sendFile(path.join(__dirname, "./index.html")));
 router.get("/client.js", (_, res) =>
   res.sendFile(path.join(__dirname, "./client.js"))
 );
-router.get("/style.css", (_, res) =>
-  res.sendFile(path.join(__dirname, "./style.css"))
-);
 
 /**
  * Student code starts here
@@ -46,7 +43,7 @@ router.get("/search", async (req, res) => {
   }
 
   let { rows } = await pool.query(
-    `SELECT *, COUNT(*) OVER ()::int AS total_count FROM ingredients ${whereClause} OFFSET $1 LIMIT 5`,
+    `SELECT *, COUNT(*) OVER ()::INTEGER AS total_count FROM ingredients ${whereClause} OFFSET $1 LIMIT 5`,
     params
   );
   res.json({ rows }).end();

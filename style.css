@@ -184,3 +184,53 @@ body {
 .recipe-ingredients-list {
   padding: 0;
 }
+
+.home-links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.home-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-position: center;
+  background-size: cover;
+  width: 45%;
+  padding: 0;
+  height: 500px;
+  text-decoration: none;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.home-link-caption {
+  width: 100%;
+  font-size: 30px;
+  background-color: rgba(255,255,255, .7);
+  padding: 25px;
+  text-align: center;
+  color: black;
+}
+
+.navbar {
+  text-align: center;
+  padding-top: 50px;;
+}
+
+.nav-image { 
+
+}
+
+.bg-ingredient {
+  background-image: url(/images/site/ingredients.jpg);
+}
+
+.bg-recipe {
+  background-image: url(/images/site/recipes.jpg);
+}
+
+.home-title {
+  font-size: 25px;
+}
