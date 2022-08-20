@@ -20,92 +20,39 @@ router.get("/detail", (_, res) =>
 /**
  * Student code starts here
  */
-const pg = require("pg");
-const pool = new pg.Pool({
-  user: "postgres",
-  host: "localhost",
-  database: "foodguru",
-  password: "lol",
-  port: 5432,
-});
+
+// connect to postgres
 
 router.get("/search", async function (req, res) {
   console.log("search recipes");
-  const { rows } = await pool.query(`
-    SELECT DISTINCT ON (r.recipe_id)
-      r.recipe_id, r.title, rp.url
-    FROM
-      recipes r
-    LEFT JOIN
-      recipes_photos rp
-    ON
-      r.recipe_id = rp.recipe_id;
-  `);
-  res.json({ rows }).end();
+
+  // return recipe_id, title, and the first photo as url
+  //
+  // for recipes without photos, return url as default.jpg
+
+  res.status(501).json({ status: "not implemented", rows: [] });
 });
 
 router.get("/get", async (req, res) => {
   const recipeId = req.query.id ? +req.query.id : 1;
   console.log("recipe get", recipeId);
 
-  const ingredientsPromise = pool.query(
-    `
-    SELECT
-      ri.id AS connection_id,
-      i.title AS ingredient_title,
-      i.image AS ingredient_image,
-      i.type AS ingredient_type
-    FROM
-      recipe_ingredients ri
+  // return all ingredient rows as ingredients
+  //    call the id from the connection connection_id
+  //    call the ingredient image ingredient_image
+  //    call the ingredient type ingredient_type
+  //    call the ingredient title ingredient_title
+  //
+  //
+  // return all photo rows as photos
+  //    return the title, body, and url (named the same)
+  //
+  //
+  // return the title as title
+  // return the body as body
+  // if no row[0] has no photo, return it as default.jpg
 
-    INNER JOIN
-      ingredients i
-    ON
-      i.id = ri.ingredient_id
-
-    WHERE
-      ri.recipe_id = $1;
-  `,
-    [recipeId]
-  );
-
-  const photosPromise = pool.query(
-    `
-    SELECT 
-      r.title, r.body, rp.url
-    FROM 
-      recipes r
-
-    LEFT JOIN
-      recipes_photos rp
-    ON
-      rp.recipe_id = r.recipe_id
-
-    WHERE 
-      r.recipe_id = $1;
-  `,
-    [recipeId]
-  );
-
-  const [{ rows: photosRows }, { rows: ingredientsRows }] = await Promise.all([
-    photosPromise,
-    ingredientsPromise,
-  ]);
-
-  console.log(photosRows, ingredientsRows);
-
-  if (!photosRows[0].url) {
-    photosRows[0].url = "default.jpg";
-  }
-
-  res.json({
-    ingredients: ingredientsRows,
-    photos: photosRows.map((photo) => photo.url),
-    title: photosRows[0].title,
-    body: photosRows[0].body,
-  });
-
-  // res.status(501).json({ status: "not implemented" });
+  res.status(501).json({ status: "not implemented" });
 });
 /**
  * Student code ends here

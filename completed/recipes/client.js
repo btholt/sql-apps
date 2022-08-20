@@ -15,7 +15,9 @@ const templateResult = ({ recipe_id, title, url }) => `
 
 const requestFromAPI = async () => {
   let url = new URL(
-    window.location.protocol + window.location.host + "/recipes/search"
+    window.location.protocol +
+      window.location.host +
+      "/completed/recipes/search"
   );
 
   const res = await fetch(url.toString());

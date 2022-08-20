@@ -11,23 +11,16 @@ router.get("/client.js", (_, res) =>
 /**
  * Student code starts here
  */
-const pg = require("pg");
-const pool = new pg.Pool({
-  user: "postgres",
-  host: "localhost",
-  database: "foodguru",
-  password: "lol",
-  port: 5432,
-});
+
+// connect to postgres
 
 router.get("/type", async (req, res) => {
   const { type } = req.query;
   console.log("get ingredients", type);
-  const { rows } = await pool.query(
-    "SELECT * FROM ingredients WHERE type = $1",
-    [type]
-  );
-  res.json({ rows }).end();
+
+  // return all ingredients of a type
+
+  res.status(501).json({ status: "not implemented", rows: [] });
 });
 
 router.get("/search", async (req, res) => {
@@ -35,25 +28,10 @@ router.get("/search", async (req, res) => {
   page = page ? page : 0;
   console.log("search ingredients", term, page);
 
-  let whereClause;
-  const params = [page * 5];
-  if (term) {
-    whereClause = `WHERE concat(title, type) ILIKE $2`;
-    params.push(`%${term}%`);
-  }
+  // return all columns as well as the count of all rows as total_count
+  // make sure to account for pagination and only return 5 rows at a time
 
-  let { rows } = await pool.query(
-    `SELECT *, COUNT(*) OVER ()::INTEGER AS total_count FROM ingredients ${whereClause} OFFSET $1 LIMIT 5`,
-    params
-  );
-  res.json({ rows }).end();
-  // res.status(501).json({ status: "not implemented", rows: [] });
-});
-
-router.delete("/delete", async (req, res) => {
-  const { id } = req.body;
-  console.log("delete ingredient", id);
-  res.status(501).json({ status: "not implemented" });
+  res.status(501).json({ status: "not implemented", rows: [] });
 });
 
 /**

@@ -234,3 +234,8 @@ body {
 .home-title {
   font-size: 25px;
 }
+
+.result-link {
+  color: black;
+  text-decoration: none;
+}

@@ -26,11 +26,15 @@ const templateResult = ({
 
 const requestFromAPI = async (type, term = "", page = 0) => {
   let url = new URL(
-    window.location.protocol + window.location.host + "/ingredients/search"
+    window.location.protocol +
+      window.location.host +
+      "/completed/ingredients/search"
   );
   if (type) {
     url = new URL(
-      window.location.protocol + window.location.host + "/ingredients/type"
+      window.location.protocol +
+        window.location.host +
+        "/completed/ingredients/type"
     );
     url.searchParams.append("type", type);
   } else {
