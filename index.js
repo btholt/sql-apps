@@ -10,6 +10,9 @@ app.get("/", (_, res) => res.sendFile(path.join(__dirname, "./index.html")));
 app.get("/style.css", (_, res) =>
   res.sendFile(path.join(__dirname, "./style.css"))
 );
+app.get("/favicon.ico", (_, res) =>
+  res.sendFile(path.join(__dirname, "./favicon.ico"))
+);
 
 app.use(express.json());
 app.use("/images", express.static("./images"));
