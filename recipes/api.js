@@ -38,10 +38,10 @@ router.get("/get", async (req, res) => {
   console.log("recipe get", recipeId);
 
   // return all ingredient rows as ingredients
-  //    call the id from the connection connection_id
-  //    call the ingredient image ingredient_image
-  //    call the ingredient type ingredient_type
-  //    call the ingredient title ingredient_title
+  //    name the id from the connection `connection_id`
+  //    name the ingredient image `ingredient_image`
+  //    name the ingredient type `ingredient_type`
+  //    name the ingredient title `ingredient_title`
   //
   //
   // return all photo rows as photos
