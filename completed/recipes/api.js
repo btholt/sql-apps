@@ -24,7 +24,7 @@ const pg = require("pg");
 const pool = new pg.Pool({
   user: "postgres",
   host: "localhost",
-  database: "foodguru",
+  database: "recipeguru",
   password: "lol",
   port: 5432,
 });
@@ -51,7 +51,6 @@ router.get("/get", async (req, res) => {
   const ingredientsPromise = pool.query(
     `
     SELECT
-      ri.id AS connection_id,
       i.title AS ingredient_title,
       i.image AS ingredient_image,
       i.type AS ingredient_type
@@ -98,8 +97,6 @@ router.get("/get", async (req, res) => {
     title: photosRows[0].title,
     body: photosRows[0].body,
   });
-
-  // res.status(501).json({ status: "not implemented" });
 });
 /**
  * Student code ends here

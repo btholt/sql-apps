@@ -38,7 +38,6 @@ router.get("/get", async (req, res) => {
   console.log("recipe get", recipeId);
 
   // return all ingredient rows as ingredients
-  //    name the id from the connection `connection_id`
   //    name the ingredient image `ingredient_image`
   //    name the ingredient type `ingredient_type`
   //    name the ingredient title `ingredient_title`

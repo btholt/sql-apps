@@ -2,11 +2,10 @@ const templateRow = (image, index) =>
   `<div data-id="${index}" class="swiper-slide" style="background-image: url('/images/food/${image}')"></div>`;
 
 const templateIngredients = ({
-  connection_id,
   ingredient_image,
   ingredient_title,
   ingredient_type,
-}) => `<div data-id="${connection_id}" class="swiper-slide" style="background-image: url('/images/food/${ingredient_image}')">
+}) => `<div class="swiper-slide" style="background-image: url('/images/food/${ingredient_image}')">
     <div class="label-image label-${ingredient_type}"></div>
     <div class="ingredient-title">${ingredient_title}</div>
   </div>`;
