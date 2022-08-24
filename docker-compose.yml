@@ -1,0 +1,18 @@
+version: "3"
+services:
+  pgadmin:
+    image: dpage/pgadmin4:6.12
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@example.com
+      PGADMIN_DEFAULT_PASSWORD: password
+      PGADMIN_LISTEN_PORT: 80
+    ports:
+      - 1234:80
+    depends_on:
+      - db
+  db:
+    image: btholt/complete-intro-to-sql
+    environment:
+      POSTGRES_PASSWORD: lol
+    ports:
+      - 5432:5432
