@@ -58,6 +58,12 @@ function populateResult(elId, results, templateFn) {
 const prev = document.getElementById("prev-button");
 const next = document.getElementById("next-button");
 function togglePaginationButtons(page, count) {
+  if (count <= 5) {
+    prev.setAttribute("disabled", "");
+    next.setAttribute("disabled", "");
+    return;
+  }
+
   if (page === 0) {
     prev.setAttribute("disabled", "");
     next.removeAttribute("disabled");
